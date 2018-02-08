@@ -30,6 +30,7 @@
     calendarView.calendarDelegate = self;
     [self.view addSubview:calendarView];
     
+<<<<<<< HEAD
     
     
     
@@ -42,6 +43,8 @@
     [self differDayDate];
     
     NSLog(@"100天后的日期为：%@",[self afterDayWithDate:100]);
+=======
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
 }
 
 
@@ -55,6 +58,7 @@
     NSLog(@"click=%@",dateString);
 }
 
+<<<<<<< HEAD
 
 
 
@@ -130,6 +134,8 @@
     return delta;
 }
 
+=======
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

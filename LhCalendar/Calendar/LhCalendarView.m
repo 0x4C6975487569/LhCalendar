@@ -73,9 +73,15 @@
     NSDateFormatter *dateFormatter = [self setupDateFormatter];
     NSDate *startDate = [dateFormatter dateFromString:self.startDay];
     NSDate *endDate = [dateFormatter dateFromString:self.endDay];
+<<<<<<< HEAD
     NSLog(@"startDate==%@  endDate==%@",startDate,endDate);
     NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:startDate];
     NSLog(@"%ld,%ld,%ld,%ld",components.year,components.month,components.day,components.weekday);
+=======
+//    NSLog(@"startDate==%@  endDate==%@",startDate,endDate);
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:startDate];
+//    NSLog(@"%ld,%ld,%ld,%ld",components.year,components.month,components.day,components.weekday);
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
     
     for (int i=0; i<monthNum; i++) {
         NSInteger month = (components.month+i)%12; //获取开始的月份
@@ -83,13 +89,19 @@
         nextComponents.year = components.year + (components.month+i)/13;
         nextComponents.month = month==0 ? 12:month;
         nextComponents.day = 1; //需要判断当前月份有多少天 后面可以设置
+<<<<<<< HEAD
 //        NSLog(@"===%ld,%ld,%ld",nextComponents.year,nextComponents.month,nextComponents.day);
+=======
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
         NSDate *nextDate = [[NSCalendar currentCalendar] dateFromComponents:nextComponents];
         //该月第一天星期几
         NSInteger weekdayOfTheFirstDay = [self weekdayInFirstDayOfTheMonth:nextDate];
         //该月有多少天
         NSInteger daysInThisMonth = [self daysInThisMonth:nextDate];
+<<<<<<< HEAD
 //        NSLog(@"%ld--%ld",weekdayOfTheFirstDay,daysInThisMonth);
+=======
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
         
         NSInteger dayNum = 0;
         if (daysInThisMonth==28 && weekdayOfTheFirstDay==0) {
@@ -121,7 +133,10 @@
                 calendarModel.weekday = [self weekOfTheToday:[NSString stringWithFormat:@"%zd-%zd-%@",calendarModel.year,calendarModel.month,calendarModel.day]];
                 //日期是否过期(startDay开始，也可今天[NSDate date])
                 int isExpiredDate = [self compareFirstDate:startDate withSecondDate:[[self setupDateFormatter] dateFromString:[NSString stringWithFormat:@"%zd-%zd-%@",calendarModel.year,calendarModel.month,calendarModel.day]]];
+<<<<<<< HEAD
 //                NSLog(@"%@ %d %@",[NSDate date],isExpiredDate,[[self setupDateFormatter] dateFromString:[NSString stringWithFormat:@"%zd-%zd-%@",calendarModel.year,calendarModel.month,calendarModel.day]]);
+=======
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
                 calendarModel.isExpiredDate = isExpiredDate == 1 ? YES : NO;
                 //日期是否超出(endDay开始)
                 int isFutureDate = [self compareFirstDate:endDate withSecondDate:[[self setupDateFormatter] dateFromString:[NSString stringWithFormat:@"%zd-%zd-%@",calendarModel.year,calendarModel.month,calendarModel.day]]];
@@ -272,6 +287,10 @@
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.backgroundColor = [UIColor whiteColor];
         
+<<<<<<< HEAD
+=======
+        //CELL 与 Header 可替换
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"CollectionITEM_lh"];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CollectionHead_lh"];
     }
@@ -416,7 +435,10 @@
 - (BOOL)isToday:(NSString *)date{
     BOOL isToday = NO;
     NSString *todayStr = [self dateWithTimeInterval:[NSDate date].timeIntervalSince1970];
+<<<<<<< HEAD
 //    NSLog(@"%@=%@",date,todayStr);
+=======
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
     if ([date isEqualToString:todayStr]) {
         isToday = YES;
     }
@@ -437,9 +459,13 @@
 - (NSInteger)weekOfTheToday:(NSString *)dateStr{
     NSDateFormatter *dateFormatter = [self setupDateFormatter];
     NSDate *date = [dateFormatter dateFromString:dateStr];
+<<<<<<< HEAD
 //    NSLog(@"date====%@",date);
     NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:date];
 //    NSLog(@"%ld,%ld,%ld,%ld",components.year,components.month,components.day,components.weekday);
+=======
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday) fromDate:date];
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
     return components.weekday-1;
 }
 

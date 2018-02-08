@@ -29,13 +29,21 @@
 
 
 /**
+<<<<<<< HEAD
  月
+=======
+ 月  暂不可打点设置修改
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
  */
 @property (nonatomic, strong) UIColor *currentMonthTitleColor;      //当前月份的字体颜色  默认：红色
 @property (nonatomic, strong) UIColor *normalMonthTitleColor;       //非当前月份的字体颜色  默认：黑色
 
 /**
+<<<<<<< HEAD
  天
+=======
+ 天  暂不可打点设置修改 
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
  */
 @property (nonatomic, strong) UIColor *currentDayBackgroundColor;   //当前日期的背景颜色  默认：红色
 @property (nonatomic, strong) UIColor *currentDayTitleColor;        //当前日期的字体颜色  默认：白色
@@ -46,7 +54,11 @@
 
 
 /**
+<<<<<<< HEAD
  星期
+=======
+ 星期  可打点设置修改
+>>>>>>> 9a1891a0d6daad356fb874d14cc5a5fc3ea5ecdb
  */
 @property (nonatomic, assign) BOOL hiddenWeekLine;   //是否影藏星期底线 YES影藏 NO不影藏 默认：YES
 @property (nonatomic, strong) UIColor *weekBackgroundColor; //星期的背景颜色 默认：白色
